@@ -1,0 +1,1491 @@
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Safario Travel - Package</title>
+	<link rel="icon" href="img/Fevicon.png" type="image/png">
+
+  <link href="{% static 'mainStlye/vendors/bootstrap/bootstrap.min.css' %}" rel="stylesheet" />
+  <link href="{% static 'mainStlye/css/style.css'%}" rel="stylesheet"/>
+  <link rel="stylesheet" href="{% static '/mainStlye/vendors/fontawesome/css/all.min.css'%}">
+  <link rel="stylesheet" href="{% static '/mainStlye/vendors/themify-icons/themify-icons.css'%}">
+  <link rel="stylesheet" href="{% static '/mainStlye/vendors/linericon/style.css'%}">
+  <link rel="stylesheet" href="{% static '/mainStlye/vendors/owl-carousel/owl.theme.default.min.css'%}">
+  <link rel="stylesheet" href="{% static '/mainStlye/vendors/owl-carousel/owl.carousel.min.css'%}">
+  <link rel="stylesheet" href="{% static '/mainStlye/vendors/flat-icon/font/flaticon.css'%}">
+  <link rel="stylesheet" href="{% static '/mainStlye/vendors/nice-select/nice-select.css'%}">
+
+
+    <link rel="stylesheet" href="{% static '/mainStlye/css/magnific-popup.css'%}">
+
+
+
+  <meta charset="utf-8" />
+  <link rel="apple-touch-icon" sizes="76x76" href="{% static 'assets/img/apple-icon.png'%}">
+  <link rel="icon" type="image/png" href="{% static 'assets/img/favicon.png'%}">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>
+    Paper Dashboard 2 by Creative Tim
+  </title>
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+  <!--     Fonts and icons     -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+  <!-- CSS Files -->
+  <link href="{% static '/assets/css/bootstrap.min.css' %}" rel="stylesheet" />
+  <link href="{% static '/assets/css/paper-dashboard.css' %}" rel="stylesheet" />
+  <!-- CSS Just for demo purpose, don't include it in your project -->
+  <link href="{% static 'assets/demo/demo.css' %}" rel="stylesheet" />
+
+
+  <style>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/holtzy/D3-graph-gallery@master/LIB/d3.layout.cloud.js"></script>
+
+
+.yourdiv
+{
+    display: inline;
+}
+
+
+path {  stroke: #fff; }
+path:hover {  opacity:0.9; }
+rect:hover {  fill:blue; }
+.axis {  font: 10px sans-serif; }
+.legend tr{    border-bottom:1px solid grey; }
+.legend tr:first-child{    border-top:1px solid grey; }
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {  display: none; }
+.legend{
+    margin-bottom:76px;
+    display:inline-block;
+    border-collapse: collapse;
+    border-spacing: 0px;
+}
+.legend td{
+    padding:4px 5px;
+    vertical-align:bottom;
+}
+.legendFreq, .legendPerc{
+    align:right;
+    width:50px;
+}
+
+</style>
+
+  <style>
+
+
+
+
+.tb
+{
+    display: table;
+    width: 100%;
+}
+
+.td
+{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+input, button
+{
+    color: #fff;
+    font-family: Nunito;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    background-color: transparent;
+}
+
+#cover
+{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 550px;
+    width: 950px;
+    padding: 35px;
+    margin: -83px auto 0 auto;
+    background-color: #ff7575;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px #ff7c7c, 0 0 0 20px #ffffffeb;
+    transform: scale(0.6);
+}
+
+form
+{
+    height: 50px;
+    width: 900px;
+
+}
+
+input[type="text"]
+{
+    width: 100%;
+    height: 100px;
+    font-size: 60px;
+    line-height: 1;
+}
+
+input[type="text"]::placeholder
+{
+    color: #e16868;
+}
+
+#s-cover
+{
+    width: 1px;
+    padding-left: 35px;
+}
+
+button
+{
+    position: relative;
+    display: block;
+    width: 84px;
+    height: 96px;
+    cursor: pointer;
+}
+
+#s-circle
+{
+    position: relative;
+    top: -25px;
+    left: 0;
+    width: 63px;
+    height: 63px;
+    margin-top: 0;
+    border-width: 10px;
+    border: 15px solid #fff;
+    background-color: transparent;
+    border-radius: 50%;
+    transition: 0.5s ease all;
+}
+
+button span
+{
+    position: absolute;
+    top: 68px;
+    left: 43px;
+    display: block;
+    width: 45px;
+    height: 15px;
+    background-color: transparent;
+    border-radius: 10px;
+    transform: rotateZ(52deg);
+    transition: 0.5s ease all;
+}
+
+button span:before, button span:after
+{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 45px;
+    height: 15px;
+    background-color: #fff;
+    border-radius: 10px;
+    transform: rotateZ(0);
+    transition: 0.5s ease all;
+}
+
+#s-cover:hover #s-circle
+{
+    top: -1px;
+    width: 67px;
+    height: 15px;
+    border-width: 0;
+    background-color: #fff;
+    border-radius: 20px;
+}
+
+#s-cover:hover span
+{
+    top: 50%;
+    left: 56px;
+    width: 25px;
+    margin-top: -9px;
+    transform: rotateZ(0);
+}
+
+#s-cover:hover button span:before
+{
+    bottom: 11px;
+    transform: rotateZ(52deg);
+}
+
+#s-cover:hover button span:after
+{
+    bottom: -11px;
+    transform: rotateZ(-52deg);
+}
+#s-cover:hover button span:before, #s-cover:hover button span:after
+{
+    right: -6px;
+    width: 40px;
+    background-color: #fff;
+}
+
+#ytd-url {
+  display: block;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  padding: 10px 14px;
+  margin: 20px;
+  color: #fff;
+  font-family: Nunito;
+  font-size: 14px;
+  text-decoration: none;
+  background-color: #ff7575;
+  border-radius: 4px;
+  box-shadow: 0 10px 20px -5px rgba(255, 117, 117, 0.86);
+  z-index: 125;
+}
+
+   </style>
+
+
+</head>
+<body>
+
+  <!--================ Header Menu Area start =================-->
+  <header class="header_area">
+    <div class="main_menu">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container box_1620">
+          <a class="navbar-brand logo_h" href="../"><img src="{% static '/mainStlye/img/logo.png'%} "></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+          <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+            <ul class="nav navbar-nav menu_nav justify-content-end">
+              <li class="nav-item"><a class="nav-link" href="/home/store">Store</a></li>
+              <li class="nav-item active"><a class="nav-link" href="package.html">Hashtag Tracking Tool</a>
+              <li class="nav-item submenu dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                  aria-expanded="false">Case Study</a>
+                <ul class="dropdown-menu">
+                </ul>
+							</li>
+<!--
+              <li class="nav-item submenu dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                  aria-expanded="false">Blog</a>
+                <ul class="dropdown-menu">
+                  <li class="nav-item"><a class="nav-link" href="blog.html">Blog Single</a></li>
+                  <li class="nav-item"><a class="nav-link" href="blog-details.html">Blog Details</a></li>
+                </ul>
+							</li>
+              <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+
+            <div class="nav-right text-center text-lg-right py-4 py-lg-0">
+              <a class="button" href="#">Get Started</a>
+            </div>
+
+          </div>
+
+        </div>
+        -->
+      </nav>
+    </div>
+
+</div>
+
+
+
+  </header>
+  <!--================Header Menu Area =================-->
+
+
+
+  <!--================Hero Banner SM Area Start =================-->
+  <section class="hero-banner-sm magic-ball magic-ball-banner" id="parallax-1" data-anchor-target="#parallax-1" data-300-top="background-position: 0px -80px" data-top-bottom="background-position: 0 100px">
+    <div class="container">
+      <div class="hero-banner-sm-content">
+        <h1>Hashtag Tracking Tool</h1>
+        <p>Air seed winged lights saw kind whales in sixth best a dont seas dron image so fish all tree on</p>
+      </div>
+      <div id="cover">
+<form action="hashtagTracker" method="get">
+            {% csrf_token %}
+
+    <div class="tb">
+      <div class="td"><input type="text" name="num1" placeholder="Search" required></div>
+      <div class="td" id="s-cover">
+        <button type="submit">
+          <div id="s-circle"></div>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+    </div>
+  </section>
+  <!--================Hero Banner SM Area End =================-->
+
+
+  <!--================Service Area Start =================-->
+  <section class="section-margin">
+    <div class="container">
+      <!--
+      <div class="section-intro text-center pb-90px">
+        <img class="section-intro-img" src="img/home/section-icon.png" alt="">
+        <h2>Our Popular Services</h2>
+        <p>Fowl have fruit moveth male they are that place you will lesser</p>
+      </div>
+      -->
+
+
+
+
+      <div class="content">
+      <div class="row">
+
+
+
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="card card-stats">
+              <div class="card-body ">
+                <div class="row">
+                  <div class="col-5 col-md-4">
+                    <div class="icon-big text-center icon-warning">
+                       <img src="{% static 'assets/img/image.png' %}">
+                    </div>
+                  </div>
+                  <div class="col-7 col-md-8">
+                    <div class="numbers">
+                      <p class="card-category"> Images</p>
+                      <p class="card-title">200<p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer ">
+                <hr>
+                <div class="stats">
+                  <i class="fa fa-refresh"></i>
+                  Update Now
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="card card-stats">
+              <div class="card-body ">
+                <div class="row">
+                  <div class="col-5 col-md-4">
+                    <div class="icon-big text-center icon-warning">
+                       <img src="{% static 'assets/img/video.png' %}">
+                    </div>
+                  </div>
+                  <div class="col-7 col-md-8">
+                    <div class="numbers">
+                      <p class="card-category">Videos</p>
+                      <p class="card-title">100<p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer ">
+                <hr>
+                <div class="stats">
+                  <i class="fa fa-calendar-o"></i>
+                  Last day
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="card card-stats">
+              <div class="card-body ">
+                <div class="row">
+                  <div class="col-5 col-md-4">
+                    <div class="icon-big text-center icon-warning">
+                       <img src="{% static 'assets/img/interactions.png' %}">
+                    </div>
+                  </div>
+                  <div class="col-7 col-md-8">
+                    <div class="numbers">
+                      <p class="card-category">interactions</p>
+                      <p class="card-title">3400<p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer ">
+                <hr>
+                <div class="stats">
+                  <i class="fa fa-clock-o"></i>
+                  In the last hour
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="card card-stats">
+              <div class="card-body ">
+                <div class="row">
+                  <div class="col-5 col-md-4">
+                    <div class="icon-big text-center icon-warning">
+                       <img src="{% static 'assets/img/post.png' %}">
+                    </div>
+                  </div>
+                  <div class="col-7 col-md-8">
+                    <div class="numbers">
+                      <p class="card-category">Posts</p>
+                      <p class="card-title">+45K<p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer ">
+                <hr>
+                <div class="stats">
+                  <i class="fa fa-refresh"></i>
+                  Update now
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card ">
+              <div class="card-header ">
+                <h5 class="card-title">Posts Engagement</h5>
+                <p class="card-category">Last 100 posts performance</p>
+              </div>
+              <div class="card-body ">
+
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-8">  <div id='interactionChart'></div></div>
+                      <div class="col"> <div id='interactionChart1'></div><div id='interactionChart2'></div></div>
+                    </div>
+                  </div>
+
+
+              </div>
+              <div class="card-footer ">
+                <hr>
+                <div class="stats">
+                  <div class="row">
+          <div class="col-md-2">
+            <div class="card">
+              <div class="card-body ">
+                    <div class="numbers">
+                      <p style="color:#69b3a2;font-size:20px;text-align: center"><strong>Interaction per Images</strong></p>
+                      <p style="color:#69b3a2;font-size:20px;text-align: center "><strong>200</strong></p>
+                    </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="card">
+              <div class="card-body ">
+                <div class="numbers">
+                      <p style="color:#69b3a2;font-size:20px;text-align: center"><strong>Interaction per Videos</strong></p>
+                      <p style="color:#69b3a2;font-size:20px;text-align: center "><strong>200</strong></p>
+                    </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="card">
+              <div class="card-body ">
+                    <div class="numbers">
+                      <p style="color:#69b3a2;font-size:20px;text-align: center"><strong>Avg Time Between Posts</strong></p>
+                      <p style="color:#69b3a2;font-size:20px;text-align: center "><strong>200 min</strong></p>
+                    </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="card">
+              <div class="card-body ">
+                    <div class="numbers">
+                     <p style="color:#69b3a2;font-size:20px;text-align: center"><strong>Maximum # of Likes</strong></p><br>
+                      <p style="color:#69b3a2;font-size:20px;text-align: center "><strong>200</strong></p>
+                    </div>
+              </div>
+
+            </div>
+          </div>
+        <div class="col-md-2">
+            <div class="card">
+              <div class="card-body ">
+                    <div class="numbers">
+                      <p style="color:#69b3a2;font-size:20px;text-align: center"><strong>Likes per Post</strong></p>
+                      <p style="color:#69b3a2;font-size:20px;text-align: center "><strong>200</strong></p>
+                    </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="col-md-2">
+            <div class="card">
+              <div class="card-body ">
+                    <div class="numbers">
+                      <p style="color:#69b3a2;font-size:20px;text-align: center"><strong>Comments per Post</strong></p>
+                      <p style="color:#69b3a2;font-size:20px;text-align: center "><strong>200</strong></p>
+                    </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+<!--
+        <div class="row">
+                <div class="col-md-12">
+                  <div class="card ">
+                     <div class="card-header ">
+                      <h5 class="card-title">Users Behavior</h5>
+                      <p class="card-category">24 Hours performance</p>
+                     </div>
+                        <div class="row">
+                          <div class="col-4">
+                                         <canvas id="horizontalBar" width="75" height="70"></canvas>
+
+
+                          </div>
+
+                          <div class="col-4">
+                            <div id="chart"></div>
+
+                          </div>
+                          <div class="col-4">
+                            <div id='my_dataviz'></div>
+                          </div>
+
+
+                        </div>
+                   </div>
+                </div>
+        </div>
+-->
+
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card ">
+              <div class="card-header ">
+                <h5 class="card-title">Top Similar Hashtags</h5>
+                <p class="card-category">Generated by our AI algorithm</p>
+              </div>
+              <div class="card-body ">
+                   <canvas id="horizontalBar" width="75" height="135"></canvas>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card ">
+              <div class="card-header ">
+                <h5 class="card-title">Top words most used</h5>
+                <p class="card-category">Last Campaign Performance</p>
+              </div>
+              <div class="card-body ">
+                  <div id="my_dataviz"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card card-chart">
+              <div class="card-header">
+                <h5 class="card-title">Hashtags most used</h5>
+                <p class="card-category">Line Chart with Points</p>
+              </div>
+              <div class="card-body">
+                <div class="yourdiv"> <div id="chart"></div>
+                     </div>
+              </div>
+            </div>
+          </div>
+
+
+            </div>
+          </div>
+    </div>
+  </section>
+  <!--================Service Area End =================-->
+
+
+  <!--================Tour section Start =================-->
+  <!--
+  <section class="section-margin">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="tour-card">
+            <img class="card-img rounded-0" src="img/home/tour1.png" alt="">
+            <div class="tour-card-overlay">
+              <div class="media">
+                <div class="media-body">
+                  <h4>Paris tour offer</h4>
+                  <small>5 days offer</small>
+                  <p>We proper guided our tourist</p>
+                </div>
+                <div class="media-price">
+                  <h4 class="text-primary">$65/day</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-lg-10 offset-lg-1">
+              <div class="tour-content">
+                <h2>We offer worldwise tour plan recently</h2>
+                <p>Make she'd moved divided air. Whose tree that hath own upon them it multiply was blessed </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="tour-card">
+            <img class="card-img rounded-0" src="img/home/tour2.png" alt="">
+            <div class="tour-card-overlay">
+              <div class="media">
+                <div class="media-body">
+                  <h4>Paris tour offer</h4>
+                  <small>5 days offer</small>
+                  <p>We proper guided our tourist</p>
+                </div>
+                <div class="media-price">
+                  <h4 class="text-primary">$65/day</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 col-lg-7">
+          <div class="tour-card">
+            <img class="card-img rounded-0" src="img/home/tour3.png" alt="">
+            <div class="tour-card-overlay">
+              <div class="media">
+                <div class="media-body">
+                  <h4>Paris tour offer</h4>
+                  <small>5 days offer</small>
+                  <p>We proper guided our tourist</p>
+                </div>
+                <div class="media-price">
+                  <h4 class="text-primary">$65/day</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-5">
+          <div class="tour-card">
+            <img class="card-img rounded-0" src="img/home/tour4.png" alt="">
+            <div class="tour-card-overlay">
+              <div class="media">
+                <div class="media-body">
+                  <h4>Paris tour offer</h4>
+                  <small>5 days offer</small>
+                  <p>We proper guided our tourist</p>
+                </div>
+                <div class="media-price">
+                  <h4 class="text-primary">$65/day</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  -->
+  <!--================Tour section End =================-->
+
+
+
+
+
+
+
+
+
+
+  <!-- ================ start footer Area ================= -->
+  <footer class="footer-area">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3  col-md-6 col-sm-6">
+          <div class="single-footer-widget">
+            <h6>About Agency</h6>
+            <p>
+              The world has become so fast paced that people don’t want to stand by reading a page of information to be  they would much rather look at a presentation and understand
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <div class="single-footer-widget">
+            <h6>Navigation Links</h6>
+            <div class="row">
+              <div class="col">
+                <ul>
+                  <li><a href="#">Home</a></li>
+                  <li><a href="#">Feature</a></li>
+                  <li><a href="#">Services</a></li>
+                  <li><a href="#">Portfolio</a></li>
+                </ul>
+              </div>
+              <div class="col">
+                <ul>
+                  <li><a href="#">Team</a></li>
+                  <li><a href="#">Pricing</a></li>
+                  <li><a href="#">Blog</a></li>
+                  <li><a href="#">Contact</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3  col-md-6 col-sm-6">
+          <div class="single-footer-widget">
+            <h6>Newsletter</h6>
+            <p>
+              For business professionals caught between high OEM price and mediocre print and graphic output.
+            </p>
+            <div id="mc_embed_signup">
+              <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="subscription relative">
+                <div class="input-group d-flex flex-row">
+                  <input name="EMAIL" placeholder="Email Address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email Address '" required="" type="email">
+                  <button class="btn bb-btn"><span class="lnr lnr-location"></span></button>
+                </div>
+                <div class="mt-10 info"></div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3  col-md-6 col-sm-6">
+          <div class="single-footer-widget mail-chimp">
+            <h6 class="mb-20">InstaFeed</h6>
+            <ul class="instafeed d-flex flex-wrap">
+              <li><img src="img/instagram/i1.jpg" alt=""></li>
+              <li><img src="img/instagram/i2.jpg" alt=""></li>
+              <li><img src="img/instagram/i3.jpg" alt=""></li>
+              <li><img src="img/instagram/i4.jpg" alt=""></li>
+              <li><img src="img/instagram/i5.jpg" alt=""></li>
+              <li><img src="img/instagram/i6.jpg" alt=""></li>
+              <li><img src="img/instagram/i7.jpg" alt=""></li>
+              <li><img src="img/instagram/i8.jpg" alt=""></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="row align-items-center">
+          <p class="col-lg-8 col-sm-12 footer-text m-0 text-center text-lg-left"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+          <div class="col-lg-4 col-sm-12 footer-social text-center text-lg-right">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-dribbble"></i></a>
+            <a href="#"><i class="fab fa-behance"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- ================ End footer Area ================= -->
+
+
+
+</body>
+
+
+  </body>
+
+
+
+  <script src="{% static '/mainStlye/vendors/jquery/jquery-3.2.1.min.js"></script>
+  <script src="{% static '/mainStlye/vendors/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="{% static '/mainStlye/vendors/owl-carousel/owl.carousel.min.js"></script>
+  <script src="{% static '/mainStlye/vendors/Magnific-Popup/jquery.magnific-popup.min.js"></script>
+  <script src="{% static '/mainStlye/vendors/nice-select/jquery.nice-select.min.js"></script>
+  <script src="{% static '/mainStlye/js/jquery.ajaxchimp.min.js"></script>
+  <script src="{% static '/mainStlye/js/mail-script.js"></script>
+  <script src="{% static '/mainStlye/js/skrollr.min.js"></script>
+  <!-- <script src="js/countdown.js"></script> -->
+  <script src="{% static '/mainStlye/js/jquery.magnific-popup.min.js"></script>
+  <script src="{% static '/mainStlye/js/main.js"></script>
+
+
+
+
+
+  <!--   Core JS Files   -->
+  <script src="{% static 'assets/js/core/jquery.min.js' %}"></script>
+  <script src="{% static 'assets/js/core/popper.min.js' %}"></script>
+  <script src="{% static 'assets/js/core/bootstrap.min.js' %}"></script>
+  <script src="{% static 'assets/js/plugins/perfect-scrollbar.jquery.min.js' %}"></script>
+  <!--  Google Maps Plugin    -->
+  <!-- Chart JS -->
+  <script src="{% static 'assets/js/plugins/chartjs.min.js' %}"></script>
+  <!--  Notifications Plugin    -->
+  <script src="{% static 'assets/js/plugins/bootstrap-notify.js' %}"></script>
+  <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
+  <script src="{% static 'assets/js/paper-dashboard.min.js' %}" type="text/javascript"></script><!-- Paper Dashboard DEMO methods, don't include it in your project! -->
+  <script src="{% static 'assets/demo/demo.js' %}"></script>
+  <script>
+    $(document).ready(function() {
+      // Javascript method's body can be found in assets/assets-for-demo/js/demo.js
+      demo.initChartsPages();
+    });
+  </script>
+
+<script src="https://d3js.org/d3.v3.min.js"></script>
+  <script src="{% static 'assets/js/cloud.js' %}"></script>
+
+    <script>
+      var text_string="{{ListOfHashsText}}"
+      drawWordCloud(text_string);
+
+      function drawWordCloud(text_string){
+        var common = "poop,i,me,my,myself,we,us,our,ours,ourselves,you,your,yours,yourself,yourselves,he,him,his,himself,she,her,hers,herself,it,its,itself,they,them,their,theirs,themselves,what,which,who,whom,whose,this,that,these,those,am,is,are,was,were,be,been,being,have,has,had,having,do,does,did,doing,will,would,should,can,could,ought,i'm,you're,he's,she's,it's,we're,they're,i've,you've,we've,they've,i'd,you'd,he'd,she'd,we'd,they'd,i'll,you'll,he'll,she'll,we'll,they'll,isn't,aren't,wasn't,weren't,hasn't,haven't,hadn't,doesn't,don't,didn't,won't,wouldn't,shan't,shouldn't,can't,cannot,couldn't,mustn't,let's,that's,who's,what's,here's,there's,when's,where's,why's,how's,a,an,the,and,but,if,or,because,as,until,while,of,at,by,for,with,about,against,between,into,through,during,before,after,above,below,to,from,up,upon,down,in,out,on,off,over,under,again,further,then,once,here,there,when,where,why,how,all,any,both,each,few,more,most,other,some,such,no,nor,not,only,own,same,so,than,too,very,say,says,said,shall";
+
+        var word_count = {};
+
+        var words = text_string.split(/[ '\-\(\)\*":;\[\]|{},.!?]+/);
+          if (words.length == 1){
+            word_count[words[0]] = 1;
+          } else {
+            words.forEach(function(word){
+              var word = word.toLowerCase();
+              if (word != "" && common.indexOf(word)==-1 && word.length>1){
+                if (word_count[word]){
+                  word_count[word]++;
+                } else {
+                  word_count[word] = 1;
+                }
+              }
+            })
+          }
+
+        var svg_location = "#chart";
+        var width = 400;
+        var height = 600;
+
+        var fill = d3.scale.category20();
+
+        var word_entries = d3.entries(word_count);
+
+        var xScale = d3.scale.linear()
+           .domain([0, d3.max(word_entries, function(d) {
+              return d.value;
+            })
+           ])
+           .range([10,100]);
+
+        d3.layout.cloud().size([width, height])
+          .timeInterval(20)
+          .words(word_entries)
+          .fontSize(function(d) { return xScale(+d.value); })
+          .text(function(d) { return d.key; })
+          .rotate(function() { return ~~(Math.random() * 2) * 90; })
+          .font("Impact")
+          .on("end", draw)
+          .start();
+
+        function draw(words) {
+          d3.select(svg_location).append("svg")
+              .attr("width", width)
+              .attr("height", height)
+            .append("g")
+              .attr("transform", "translate(" + [width >> 1, height >> 1] + ")")
+            .selectAll("text")
+              .data(words)
+            .enter().append("text")
+              .style("font-size", function(d) { return xScale(d.value) + "px"; })
+              .style("font-family", "Impact")
+              .style("fill", function(d, i) { return fill(i); })
+              .attr("text-anchor", "middle")
+              .attr("transform", function(d) {
+                return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+              })
+              .text(function(d) { return d.key; });
+        }
+
+        d3.layout.cloud().stop();
+      }
+    </script>
+
+
+
+
+
+
+
+
+<script>
+function dashboard(fData){
+    var barColor = 'steelblue';
+    function segColor(c){ return {Image:"#807dba", Carousel:"#e08214",Video:"#41ab5d"}[c]; }
+
+    // compute total for each state.
+    fData.forEach(function(d){d.total=d.freq.Image+d.freq.Carousel+d.freq.Video;});
+
+    // function to handle histogram.
+    function histoGram(fD){
+        var hG={},    hGDim = {t: 60, r: 0, b: 30, l: 0};
+        hGDim.w = 500 - hGDim.l - hGDim.r,
+        hGDim.h = 300 - hGDim.t - hGDim.b;
+
+        //create svg for histogram.
+        var hGsvg = d3.select('#dashboard').append("svg")
+            .attr("width", hGDim.w + hGDim.l + hGDim.r)
+            .attr("height", hGDim.h + hGDim.t + hGDim.b).append("g")
+            .attr("transform", "translate(" + hGDim.l + "," + hGDim.t + ")");
+
+        // create function for x-axis mapping.
+        var x = d3.scale.ordinal().rangeRoundBands([0, hGDim.w], 0.1)
+                .domain(fD.map(function(d) { return d[0]; }));
+
+        // Add x-axis to the histogram svg.
+        hGsvg.append("g").attr("class", "x axis")
+            .attr("transform", "translate(0," + hGDim.h + ")")
+            .call(d3.svg.axis().scale(x).orient("bottom"));
+
+        // Create function for y-axis map.
+        var y = d3.scale.linear().range([hGDim.h, 0])
+                .domain([0, d3.max(fD, function(d) { return d[1]; })]);
+
+        // Create bars for histogram to contain rectangles and freq labels.
+        var bars = hGsvg.selectAll(".bar").data(fD).enter()
+                .append("g").attr("class", "bar");
+
+        //create the rectangles.
+        bars.append("rect")
+            .attr("x", function(d) { return x(d[0]); })
+            .attr("y", function(d) { return y(d[1]); })
+            .attr("width", x.rangeBand())
+            .attr("height", function(d) { return hGDim.h - y(d[1]); })
+            .attr('fill',barColor)
+            .on("mouseover",mouseover)// mouseover is defined below.
+            .on("mouseout",mouseout);// mouseout is defined below.
+
+        //Create the frequency labels above the rectangles.
+        bars.append("text").text(function(d){ return d3.format(",")(d[1])})
+            .attr("x", function(d) { return x(d[0])+x.rangeBand()/2; })
+            .attr("y", function(d) { return y(d[1])-5; })
+            .attr("text-anchor", "middle");
+
+        function mouseover(d){  // utility function to be called on mouseover.
+            // filter for selected state.
+            var st = fData.filter(function(s){ return s.State == d[0];})[0],
+                nD = d3.keys(st.freq).map(function(s){ return {type:s, freq:st.freq[s]};});
+
+            // call update functions of pie-chart and legend.
+            pC.update(nD);
+            leg.update(nD);
+        }
+
+        function mouseout(d){    // utility function to be called on mouseout.
+            // reset the pie-chart and legend.
+            pC.update(tF);
+            leg.update(tF);
+        }
+
+        // create function to update the bars. This will be used by pie-chart.
+        hG.update = function(nD, color){
+            // update the domain of the y-axis map to reflect change in frequencies.
+            y.domain([0, d3.max(nD, function(d) { return d[1]; })]);
+
+            // Attach the new data to the bars.
+            var bars = hGsvg.selectAll(".bar").data(nD);
+
+            // transition the height and color of rectangles.
+            bars.select("rect").transition().duration(500)
+                .attr("y", function(d) {return y(d[1]); })
+                .attr("height", function(d) { return hGDim.h - y(d[1]); })
+                .attr("fill", color);
+
+            // transition the frequency labels location and change value.
+            bars.select("text").transition().duration(500)
+                .text(function(d){ return d3.format(",")(d[1])})
+                .attr("y", function(d) {return y(d[1])-5; });
+        }
+        return hG;
+    }
+
+    // function to handle pieChart.
+    function pieChart(pD){
+        var pC ={},    pieDim ={w:250, h:250};
+        pieDim.r = Math.min(pieDim.w, pieDim.h) / 2;
+
+        // create svg for pie chart.
+        var piesvg = d3.select('#dashboard1').append("svg")
+            .attr("width", pieDim.w).attr("height", pieDim.h).append("g")
+            .attr("transform", "translate("+pieDim.w/2+","+pieDim.h/2+")");
+
+        // create function to draw the arcs of the pie slices.
+        var arc = d3.svg.arc().outerRadius(pieDim.r - 10).innerRadius(100);
+
+        // create a function to compute the pie slice angles.
+        var pie = d3.layout.pie().sort(null).value(function(d) { return d.freq; });
+
+        // Draw the pie slices.
+        piesvg.selectAll("path").data(pie(pD)).enter().append("path").attr("d", arc)
+            .each(function(d) { this._current = d; })
+            .style("fill", function(d) { return segColor(d.data.type); })
+            .on("mouseover",mouseover).on("mouseout",mouseout);
+
+        // create function to update pie-chart. This will be used by histogram.
+        pC.update = function(nD){
+            piesvg.selectAll("path").data(pie(nD)).transition().duration(500)
+                .attrTween("d", arcTween);
+        }
+        // Utility function to be called on mouseover a pie slice.
+        function mouseover(d){
+            // call the update function of histogram with new data.
+            hG.update(fData.map(function(v){
+                return [v.State,v.freq[d.data.type]];}),segColor(d.data.type));
+        }
+        //Utility function to be called on mouseout a pie slice.
+        function mouseout(d){
+            // call the update function of histogram with all data.
+            hG.update(fData.map(function(v){
+                return [v.State,v.total];}), barColor);
+        }
+        // Animating the pie-slice requiring a custom function which specifies
+        // how the intermediate paths should be drawn.
+        function arcTween(a) {
+            var i = d3.interpolate(this._current, a);
+            this._current = i(0);
+            return function(t) { return arc(i(t));    };
+        }
+        return pC;
+    }
+
+    // function to handle legend.
+    function legend(lD){
+        var leg = {};
+
+        // create table for legend.
+        var legend = d3.select('#dashboard2').append("table").attr('class','legend');
+
+        // create one row per segment.
+        var tr = legend.append("tbody").selectAll("tr").data(lD).enter().append("tr");
+
+        // create the first column for each segment.
+        tr.append("td").append("svg").attr("width", '10').attr("height", '10').append("rect")
+            .attr("width", '10').attr("height", '10')
+			.attr("fill",function(d){ return segColor(d.type); });
+
+        // create the second column for each segment.
+        tr.append("td").text(function(d){ return d.type;});
+
+        // create the third column for each segment.
+        tr.append("td").attr("class",'legendFreq')
+            .text(function(d){ return d3.format(",")(d.freq);});
+
+        // create the fourth column for each segment.
+        tr.append("td").attr("class",'legendPerc')
+            .text(function(d){ return getLegend(d,lD);});
+
+        // Utility function to be used to update the legend.
+        leg.update = function(nD){
+            // update the data attached to the row elements.
+            var l = legend.select("tbody").selectAll("tr").data(nD);
+
+            // update the frequencies.
+            l.select(".legendFreq").text(function(d){ return d3.format(",")(d.freq);});
+
+            // update the percentage column.
+            l.select(".legendPerc").text(function(d){ return getLegend(d,nD);});
+        }
+
+        function getLegend(d,aD){ // Utility function to compute percentage.
+            return d3.format("%")(d.freq/d3.sum(aD.map(function(v){ return v.freq; })));
+        }
+
+        return leg;
+    }
+
+    // calculate total frequency by segment for all state.
+    var tF = ['Image','Carousel','Video'].map(function(d){
+        return {type:d, freq: d3.sum(fData.map(function(t){ return t.freq[d];}))};
+    });
+
+    // calculate total frequency by state for all segment.
+    var sF = fData.map(function(d){return [d.State,d.total];});
+
+    var hG = histoGram(sF), // create the histogram.
+        pC = pieChart(tF), // create the pie-chart.
+        leg= legend(tF);  // create the legend.
+}
+
+function interactionChart(fData){
+    var barColor = 'steelblue';
+    function segColor(c){ return {Likes:"#807dba", Comments:"#e08214",Views:"#41ab5d"}[c]; }
+
+    // compute total for each state.
+    fData.forEach(function(d){d.total=d.freq.Likes+d.freq.Comments+d.freq.Views;});
+
+    // function to handle histogram.
+    function histoGram(fD){
+        var hG={},    hGDim = {t: 60, r: 0, b: 30, l: 0};
+        hGDim.w = 500 - hGDim.l - hGDim.r,
+        hGDim.h = 300 - hGDim.t - hGDim.b;
+
+        //create svg for histogram.
+        var hGsvg = d3.select('#interactionChart').append("svg")
+            .attr("width", hGDim.w + hGDim.l + hGDim.r)
+            .attr("height", hGDim.h + hGDim.t + hGDim.b).append("g")
+            .attr("transform", "translate(" + hGDim.l + "," + hGDim.t + ")");
+
+        // create function for x-axis mapping.
+        var x = d3.scale.ordinal().rangeRoundBands([0, hGDim.w], 0.1)
+                .domain(fD.map(function(d) { return d[0]; }));
+
+        // Add x-axis to the histogram svg.
+        hGsvg.append("g").attr("class", "x axis")
+            .attr("transform", "translate(0," + hGDim.h + ")")
+            .call(d3.svg.axis().scale(x).orient("bottom"));
+
+        // Create function for y-axis map.
+        var y = d3.scale.linear().range([hGDim.h, 0])
+                .domain([0, d3.max(fD, function(d) { return d[1]; })]);
+
+        // Create bars for histogram to contain rectangles and freq labels.
+        var bars = hGsvg.selectAll(".bar").data(fD).enter()
+                .append("g").attr("class", "bar");
+
+        //create the rectangles.
+        bars.append("rect")
+            .attr("x", function(d) { return x(d[0]); })
+            .attr("y", function(d) { return y(d[1]); })
+            .attr("width", x.rangeBand())
+            .attr("height", function(d) { return hGDim.h - y(d[1]); })
+            .attr('fill',barColor)
+            .on("mouseover",mouseover)// mouseover is defined below.
+            .on("mouseout",mouseout);// mouseout is defined below.
+
+        //Create the frequency labels above the rectangles.
+        bars.append("text").text(function(d){ return d3.format(",")(d[1])})
+            .attr("x", function(d) { return x(d[0])+x.rangeBand()/2; })
+            .attr("y", function(d) { return y(d[1])-5; })
+            .attr("text-anchor", "middle");
+
+        function mouseover(d){  // utility function to be called on mouseover.
+            // filter for selected state.
+            var st = fData.filter(function(s){ return s.State == d[0];})[0],
+                nD = d3.keys(st.freq).map(function(s){ return {type:s, freq:st.freq[s]};});
+
+            // call update functions of pie-chart and legend.
+            pC.update(nD);
+            leg.update(nD);
+        }
+
+        function mouseout(d){    // utility function to be called on mouseout.
+            // reset the pie-chart and legend.
+            pC.update(tF);
+            leg.update(tF);
+        }
+
+        // create function to update the bars. This will be used by pie-chart.
+        hG.update = function(nD, color){
+            // update the domain of the y-axis map to reflect change in frequencies.
+            y.domain([0, d3.max(nD, function(d) { return d[1]; })]);
+
+            // Attach the new data to the bars.
+            var bars = hGsvg.selectAll(".bar").data(nD);
+
+            // transition the height and color of rectangles.
+            bars.select("rect").transition().duration(500)
+                .attr("y", function(d) {return y(d[1]); })
+                .attr("height", function(d) { return hGDim.h - y(d[1]); })
+                .attr("fill", color);
+
+            // transition the frequency labels location and change value.
+            bars.select("text").transition().duration(500)
+                .text(function(d){ return d3.format(",")(d[1])})
+                .attr("y", function(d) {return y(d[1])-5; });
+        }
+        return hG;
+    }
+
+    // function to handle pieChart.
+    function pieChart(pD){
+        var pC ={},    pieDim ={w:250, h:250};
+        pieDim.r = Math.min(pieDim.w, pieDim.h) / 2;
+
+        // create svg for pie chart.
+        var piesvg = d3.select('#interactionChart1').append("svg")
+            .attr("width", pieDim.w).attr("height", pieDim.h).append("g")
+            .attr("transform", "translate("+pieDim.w/2+","+pieDim.h/2+")");
+
+        // create function to draw the arcs of the pie slices.
+        var arc = d3.svg.arc().outerRadius(pieDim.r - 10).innerRadius(100);
+
+        // create a function to compute the pie slice angles.
+        var pie = d3.layout.pie().sort(null).value(function(d) { return d.freq; });
+
+        // Draw the pie slices.
+        piesvg.selectAll("path").data(pie(pD)).enter().append("path").attr("d", arc)
+            .each(function(d) { this._current = d; })
+            .style("fill", function(d) { return segColor(d.data.type); })
+            .on("mouseover",mouseover).on("mouseout",mouseout);
+
+        // create function to update pie-chart. This will be used by histogram.
+        pC.update = function(nD){
+            piesvg.selectAll("path").data(pie(nD)).transition().duration(500)
+                .attrTween("d", arcTween);
+        }
+        // Utility function to be called on mouseover a pie slice.
+        function mouseover(d){
+            // call the update function of histogram with new data.
+            hG.update(fData.map(function(v){
+                return [v.State,v.freq[d.data.type]];}),segColor(d.data.type));
+        }
+        //Utility function to be called on mouseout a pie slice.
+        function mouseout(d){
+            // call the update function of histogram with all data.
+            hG.update(fData.map(function(v){
+                return [v.State,v.total];}), barColor);
+        }
+        // Animating the pie-slice requiring a custom function which specifies
+        // how the intermediate paths should be drawn.
+        function arcTween(a) {
+            var i = d3.interpolate(this._current, a);
+            this._current = i(0);
+            return function(t) { return arc(i(t));    };
+        }
+        return pC;
+    }
+
+    // function to handle legend.
+    function legend(lD){
+        var leg = {};
+
+        // create table for legend.
+        var legend = d3.select('#interactionChart2').append("table").attr('class','legend');
+
+        // create one row per segment.
+        var tr = legend.append("tbody").selectAll("tr").data(lD).enter().append("tr");
+
+        // create the first column for each segment.
+        tr.append("td").append("svg").attr("width", '10').attr("height", '10').append("rect")
+            .attr("width", '10').attr("height", '10')
+			.attr("fill",function(d){ return segColor(d.type); });
+
+        // create the second column for each segment.
+        tr.append("td").text(function(d){ return d.type;});
+
+        // create the third column for each segment.
+        tr.append("td").attr("class",'legendFreq')
+            .text(function(d){ return d3.format(",")(d.freq);});
+
+        // create the fourth column for each segment.
+        tr.append("td").attr("class",'legendPerc')
+            .text(function(d){ return getLegend(d,lD);});
+
+        // Utility function to be used to update the legend.
+        leg.update = function(nD){
+            // update the data attached to the row elements.
+            var l = legend.select("tbody").selectAll("tr").data(nD);
+
+            // update the frequencies.
+            l.select(".legendFreq").text(function(d){ return d3.format(",")(d.freq);});
+
+            // update the percentage column.
+            l.select(".legendPerc").text(function(d){ return getLegend(d,nD);});
+        }
+
+        function getLegend(d,aD){ // Utility function to compute percentage.
+            return d3.format("%")(d.freq/d3.sum(aD.map(function(v){ return v.freq; })));
+        }
+
+        return leg;
+    }
+
+    // calculate total frequency by segment for all state.
+    var tF = ['Likes','Comments','Views'].map(function(d){
+        return {type:d, freq: d3.sum(fData.map(function(t){ return t.freq[d];}))};
+    });
+
+    // calculate total frequency by state for all segment.
+    var sF = fData.map(function(d){return [d.State,d.total];});
+
+    var hG = histoGram(sF), // create the histogram.
+        pC = pieChart(tF), // create the pie-chart.
+        leg= legend(tF);  // create the legend.
+}
+
+
+</script>
+
+
+<script>
+var freqData=[
+{State:'Sunday',freq:{Image:{{ImgCount}}, Carousel:11, Video:8,likes:20,comments:30}}
+,{State:'Monday',freq:{Image:{{ImgCount}}, Carousel:12.2, Video:11.8,likes:20,comments:30}}
+,{State:'Tuesday',freq:{Image:{{ImgCount}}, Carousel:7, Video:7.1,likes:20,comments:30}}
+,{State:'Wednesday',freq:{Image:{{ImgCount}}, Carousel:13, Video:16.1,likes:20,comments:30}}
+,{State:'Thursday',freq:{Image:{{ImgCount}}, Carousel:10.9, Video:14.5,likes:20,comments:30}}
+,{State:'Friday',freq:{Image:{{ImgCount}}, Carousel:11.4, Video:13.3,likes:20,comments:30}}
+];
+
+
+var freqData1=[
+{State:'Sunday',freq:{ Likes:8,Comments:20,Views:30}}
+,{State:'Monday',freq:{ Likes:11.8,Comments:20,Views:30}}
+,{State:'Tuesday',freq:{ Likes:7.1,Comments:20,Views:30}}
+,{State:'Wednesday',freq:{ Likes:16.1,Comments:20,Views:30}}
+,{State:'Thursday',freq:{ Likes:14.5,Comments:20,Views:30}}
+,{State:'Friday',freq:{ Likes:13.3,Comments:20,Views:30}}
+];
+
+dashboard(freqData);
+interactionChart(freqData1);
+
+
+
+
+
+
+
+</script>
+<script>
+
+new Chart(document.getElementById("horizontalBar"), {
+"type": "horizontalBar",
+"data": {
+"labels": {{ hashRankWords|safe }},
+"datasets": [{
+"label": "Number of Posts",
+"height":900,
+"width": 700,
+"data": {{ hashRankValues|safe }},
+"fill": false,
+"backgroundColor": ["rgba(255, 99, 132, 0.2)", "rgba(255, 159, 64, 0.2)",
+"rgba(255, 205, 86, 0.2)", "rgba(75, 192, 192, 0.2)", "rgba(54, 162, 235, 0.2)",
+"rgba(153, 102, 255, 0.2)", "rgba(201, 203, 207, 0.2)","rgba(255, 99, 132, 0.2)", "rgba(255, 159, 64, 0.2)",
+"rgba(255, 205, 86, 0.2)", "rgba(75, 192, 192, 0.2)", "rgba(54, 162, 235, 0.2)",
+"rgba(153, 102, 255, 0.2)", "rgba(201, 203, 207, 0.2)","rgba(255, 99, 132, 0.2)"
+],
+"borderColor": ["rgb(255, 99, 132)", "rgb(255, 159, 64)", "rgb(255, 205, 86)",
+"rgb(75, 192, 192)", "rgb(54, 162, 235)", "rgb(153, 102, 255)", "rgb(201, 203, 207)","rgb(255, 99, 132)", "rgb(255, 159, 64)", "rgb(255, 205, 86)",
+"rgb(75, 192, 192)", "rgb(54, 162, 235)", "rgb(153, 102, 255)", "rgb(201, 203, 207)","rgb(255, 99, 132)"],
+"borderWidth": 1
+}]
+},
+"options": {
+"scales": {
+"xAxes": [{
+"ticks": {
+"beginAtZero": true
+}
+}]
+}
+}
+});
+
+</script>
+
+
+<script>
+
+// List of words
+var myWords = ["Hello", "Everybody", "How", "Are", "You", "Today", "It", "Is", "A", "Lovely", "Day", "I", "Love", "Coding", "In", "My", "Van", "Mate", "Peace", "Love", "Keep", "The", "Good", "Work", "Make", "Love", "Not", "War","Surfing","R", "R",
+   "Data-Viz","Python","Linux","Programming","Graph Gallery","Biologie", "Resistance",
+   "Computing","Data-Science","Reproductible","GitHub","Script", "Experimentation","Talk","Conference","Writing",
+   "Publication","Analysis","Bioinformatics","Science","Statistics","Data",
+   "Programming","Wheat","Virus","Genotyping","Work","Fun","Surfing","R", "R",
+   "Data-Viz","Python","Linux","Programming"]
+
+// set the dimensions and margins of the graph
+var margin = {top: 10, right: 10, bottom: 10, left: 10},
+    width = 300 - margin.left - margin.right,
+    height = 550 - margin.top - margin.bottom;
+
+// append the svg object to the body of the page
+var svg = d3.select("#my_dataviz").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform",
+          "translate(" + margin.left + "," + margin.top + ")");
+
+// Constructs a new cloud layout instance. It run an algorithm to find the position of words that suits your requirements
+// Wordcloud features that are different from one word to the other must be here
+var layout = d3.layout.cloud()
+  .size([width, height])
+  .words(myWords.map(function(d) { return {text: d}; }))
+  .padding(5)        //space between words
+  .rotate(-45)       // rotation angle in degrees
+  .fontSize(20)      // font size of words
+  .on("end", draw);
+layout.start();
+
+// This function takes the output of 'layout' above and draw the words
+// Wordcloud features that are THE SAME from one word to the other can be here
+function draw(words) {
+  svg
+    .append("g")
+      .attr("transform", "translate(" + layout.size()[0] / 2 + "," + layout.size()[1] / 2 + ")")
+      .selectAll("text")
+        .data(words)
+      .enter().append("text")
+        .style("font-size", 20)
+        .style("fill", "#69b3a2")
+        .attr("text-anchor", "middle")
+        .style("font-family", "Impact")
+        .attr("transform", function(d) {
+          return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+        })
+        .text(function(d) { return d.text; });
+}
+</script>
+
+
+
+</html>
+
+
+
+
+</html>
