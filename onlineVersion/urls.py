@@ -21,7 +21,7 @@ from django.urls import path,include
 
 
 urlpatterns = [
-    path('',include('home.urls')),
+    path('',include('mdkdesign.urls')),
     path('store/', include('store.urls')),
     path('hashtag/', include('hashtag.urls')),
 
